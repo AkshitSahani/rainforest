@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :load_product
+  before_action :ensure_logged_in, only: [:create, :destroy]
 
   def show
     @review = Review.find(params[:id])
@@ -25,7 +26,7 @@ class ReviewsController < ApplicationController
   end
 
   private
-  
+
   def review_params
       params.require(:review).permit(:comment, :product_id)
     end
