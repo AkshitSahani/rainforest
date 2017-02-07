@@ -4,7 +4,7 @@
 
 <div>
   <ul> <% @products.each do |p| %>
-    <li> Name: <%= p.name %> <br><br> Price: <%= p.formatted_price %> dollars <br> <br> Description: <%= p.description %> <br><br><br> </li>
+    <li> Name: <%= link_to (p.name), product_path(p) %> <br><br> Price: <%= p.formatted_price %> dollars <br> <br> Description: <%= p.description %> <br><br><br> </li>
     <% end %>
   </ul>
 </div>
